@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Luan\AdminPanel\AdminPanel\Auth\LoginController;
 use Luan\AdminPanel\AdminPanel\Auth\LogoutController;
@@ -8,7 +9,7 @@ Route::group(['middleware' => ['web','auth']], function(){
     
     Route::get('admin',function()
     {
-        dd(auth()->user());
+        dd(Auth::user());
         // return view('adpanel::AdminPanel.dashboard');
     })->name('admin.dashboard');
 });;
